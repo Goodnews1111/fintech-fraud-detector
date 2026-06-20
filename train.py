@@ -45,9 +45,10 @@ model = XGBClassifier(
 model.fit(X_train, y_train)
 
 # Features Importance
-fig1, ax1 = plt.subplots(figsize=(10, 6))
+fig1, ax1 = plt.subplots(figsize=(11, 7))
 plot_importance(model, max_num_features=5, importance_type='weight', ax=ax1)
 plt.title("Top Fraud Indicators")
+plt.tight_layout()
 plt.savefig("feature_importance.png") 
 plt.close(fig1)
 
